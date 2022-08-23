@@ -17,7 +17,7 @@ public class RegistrationFormPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
-            genderOtherSelect = $("[for=gender-radio-3]"),
+            genderSelect = $("#genterWrapper"),
             mobileNumberInput = $("#userNumber"),
             calendarInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
@@ -29,7 +29,6 @@ public class RegistrationFormPage {
             submitButton = $("#submit");
 
     private final static String TITLE_TEXT = "Student Registration Form";
-    private final static String UPLOAD_FILE = "Picture/Picture.pic";
 
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
@@ -58,8 +57,8 @@ public class RegistrationFormPage {
         return this;
     }
 
-    public RegistrationFormPage setGender() {
-        genderOtherSelect.click();
+    public RegistrationFormPage setGender(String value) {
+        genderSelect.$(byText(value)).click();
 
         return this;
     }
@@ -89,8 +88,8 @@ public class RegistrationFormPage {
         return this;
     }
 
-    public RegistrationFormPage uploadPicture() {
-        pictureUpload.uploadFromClasspath(UPLOAD_FILE);
+    public RegistrationFormPage uploadPicture(String value) {
+        pictureUpload.uploadFromClasspath(value);
 
         return this;
     }
