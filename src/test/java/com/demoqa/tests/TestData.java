@@ -10,8 +10,10 @@ public class TestData {
 
     static String
             sourcePicture = "pictures/Picture.pic",
-            userState = "Uttar Pradesh",
-            userCity = "Lucknow";
+            checkPicture = "Picture.pic",
+            studentState = "Uttar Pradesh",
+            studentCity = "Lucknow";
+
     public static String getDayOfBirth() {
         int  dateBirthday = faker.number().numberBetween(1, 29);
         if (dateBirthday < 10) {
@@ -75,17 +77,4 @@ public class TestData {
         }
         return hobby;
     }
-
-//    public static String getStateAndCity() {
-//        String state = "", city = "";
-//        int num = faker.number().numberBetween(0, 4);
-//        switch (num) {
-//            case 0: state = "NCR"; city = "Delhi"; break;
-//            case 1: state = "Uttar Pradesh"; city = "Lucknow"; break;
-//            case 2: state = "Haryana"; city = "Panipat"; break;
-//            case 3: state = "Rajasthan"; city = "Jaiselmer"; break;
-//        }
-//        return (state + city);
-//    }
-
 }

@@ -20,13 +20,7 @@ public class StudentFormWithPageObjectsTests extends TestBaseConfig {
             subject,
             hobby,
             currentAddress;
-//            state,
-    //          city;
 
-    /*
-            picture
-
-    */
     @BeforeEach
     void prepareTestData() {
         firstname = faker.name().firstName();
@@ -57,21 +51,21 @@ public class StudentFormWithPageObjectsTests extends TestBaseConfig {
                 .setHobbies(hobby)
                 .uploadPicture(TestData.sourcePicture)
                 .setAddress(currentAddress)
-                .setState(TestData.userState)
-                .setCity(TestData.userCity)
+                .setState(TestData.studentState)
+                .setCity(TestData.studentCity)
                 .submitForm()
 
                 .checkResultsTableVisible()
                 .checkResultsTable("Student Name", firstname + " " + lastName)
                 .checkResultsTable("Student Email", email)
                 .checkResultsTable("Gender", gender)
-                .checkResultsTable("Mobile", "0123456789")
-                .checkResultsTable("Date of Birth", "21 July,2010")
-                .checkResultsTable("Subjects", "Maths, Arts")
-                .checkResultsTable("Hobbies", "Music")
-                .checkResultsTable("Picture", "Picture.pic")
-                .checkResultsTable("Address", "Wellington Square, 25")
-                .checkResultsTable("State and City", "Haryana Karnal")
+                .checkResultsTable("Mobile", mobileNumber)
+                .checkResultsTable("Date of Birth", dayOfBirth + " " + monthBirthday + "," + yearBirthday) //format 21 July,2010
+                .checkResultsTable("Subjects", subject)
+                .checkResultsTable("Hobbies", hobby)
+                .checkResultsTable("Picture", TestData.checkPicture)
+                .checkResultsTable("Address", currentAddress)
+                .checkResultsTable("State and City", TestData.studentState + " " + TestData.studentCity)
                 .checkResultsTableIsClose();
     }
 }
