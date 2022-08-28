@@ -44,7 +44,7 @@ public class StudentFormWithPageObjectsTests extends TestBaseConfig {
                 .setFirstName(firstname)
                 .setLastName(lastName)
                 .setEmailInput(email)
-                .setGender(TestData.getGenderRandom())
+                .setGender(gender)
                 .setMobileNumber(mobileNumber)
                 .setBirthDay(dayOfBirth, monthBirthday, yearBirthday)
                 .setSubjects(subject)
